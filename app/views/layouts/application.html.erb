@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MySite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  	  
+  	  	  <div class="container">
+  	  	  	
+  	  	  	<ul class="nav navbar-nav">
+  	  	  		<li ><%= link_to "PeoBook", root_path %></li>
+  	  	  		<li class="active"><%= link_to "Status", statuses_path %></li>	
+  	  	  	</ul>
+  	  	  </div>
+  	  		
+  	  </div>
+
+	  <div class="container">
+	    <%= yield %>
+	  </div>
+
+
+  </body>
+</html>

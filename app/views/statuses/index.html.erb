@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>Todos los estados</h1>
+</div>
+
+<%= link_to "Nuevo Post", new_status_path, class: "btn btn-success "%>
+
+<% @statuses.each do |s| %>
+  
+  <div class="status">
+    <strong><%= s.nombre %></strong>
+    <p><%= s.contenido %></p>
+
+    <div>
+      <%= link_to "Hace: " + time_ago_in_words(s.created_at), s %>
+      <span class="admin">
+        <%= link_to "Editar", edit_status_path(s) %>
+        <%= link_to "Borrar", s, method: :delete, data:{ confirm: "¿Estas seguro de borrar?" }%>
+      </span>
+    </div>
+    
+  </div>
+
+
+
+<%end%>
